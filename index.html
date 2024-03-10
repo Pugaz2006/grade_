@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grade Calculator</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Grade Calculator</h1>
+  <label for="studentName">Student's Name:</label>
+  <input type="text" id="studentName"><br>
+  <label for="mathScore">Math Score:</label>
+  <input type="number" id="mathScore"><br>
+  <label for="scienceScore">Science Score:</label>
+  <input type="number" id="scienceScore"><br>
+  <label for="englishScore">English Score:</label>
+  <input type="number" id="englishScore"><br>
+  <button onclick="calculateAverage()">Calculate Average</button>
+  <p id="averageScore"></p>
+
+  <script>
+    // JavaScript for calculating average score
+    function calculateAverage() {
+      var studentName = document.getElementById('studentName').value;
+      var mathScore = parseFloat(document.getElementById('mathScore').value);
+      var scienceScore = parseFloat(document.getElementById('scienceScore').value);
+      var englishScore = parseFloat(document.getElementById('englishScore').value);
+      var averageScore = (mathScore + scienceScore + englishScore) / 3;
+      document.getElementById('averageScore').innerText = studentName + "'s average score is: " + averageScore.toFixed(2);
+    }
+  </script>
+</body>
+</html>
